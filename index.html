@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora Bennys</title>
+  <link rel="icon" href="./img/bennys-removebg-preview.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #930714;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+    h1 {
+      text-align:center;
+    }
+    h2 {
+      padding: 0%;
+    }
+    #item-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* EspaÃ§ar os itens uniformemente nas colunas */
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+    li {
+      margin: 10px;
+      flex-basis: calc(33.33% - 20px); /* TrÃªs colunas lado a lado com margens de 10px */
+      display: flex;
+      align-items: center;
+    }
+
+.nomes {
+  display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* EspaÃ§ar os itens uniformemente nas colunas */
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+}
+
+    h2{
+      margin: 10px;
+      flex-basis: calc(33.33% - 20px); /* TrÃªs colunas lado a lado com margens de 10px */
+      display: flex;
+      align-items: center;
+    }
+    label {
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    #total {
+      display: block;
+      padding: 10px;
+      margin-bottom:10px;
+      font-size: 18px;
+      width: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .total{
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .fotinha{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 260px;
+    }
+
+    .foto{
+        max-width: 100%;
+        height: auto;
+    }
+  </style>
+</head>
+<body>
+    <div class="fotinha">
+        <img class="foto" src="./img/bennys-removebg-preview.png" alt="fotinha bennys">
+    </div>
+  <h1>Bennys Custom</h1>
+  <div class="nomes">
+      <h2>Tuning</h2>
+      <h2>Estetica 1</h2>
+      <h2>Estetica 2</h2>
+  </div>
+  <ul id="item-list">
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="40000">
+      <label>Motor</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Cor</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Escapamento</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="40000">
+      <label>Freio</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Insufilm</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Teto</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="40000">
+      <label>Suspensão</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Perolado</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Grelha</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="40000">
+      <label>Transmissão</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Pintura (fosco, Metalico ou Metal)</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Portas</label>
+      <li>
+        <input type="checkbox" onchange="updateTotal()" data-price="40000">
+        <label>Turbo</label>
+      </li>
+      <li>
+        <input type="checkbox" onchange="updateTotal()" data-price="10000">
+        <label>Neon</label>
+      </li>
+      <li>
+        <input type="checkbox" onchange="updateTotal()" data-price="10000">
+        <label>Paralama</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="200000">
+      <label>Blindagem</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="25000">
+      <label>Xenon</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="25000">
+      <label>Rodas</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="200000">
+      <label>Full Tunning Sem Blindagem(carro)</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="20000">
+      <label>Fumaça Pneu</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Capo</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="180000">
+      <label>Full Tunning Sem Blindagem(Moto)</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Decal</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Farol</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="400000">
+      <label>Full Tuning Com Blindagem (Carro)</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Enfeites</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Buzina</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="350000">
+      <label>Full Tuning Com Blindagem (Moto)</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Placa</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Gaiola</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="6000">
+      <label>Reparo</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Painel</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Ponteiro</label>
+    </li>
+    <li>
+      <label></label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Bancos</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Cor da Roda</label>
+    </li>
+    <li>
+      <label></label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Saias</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Parachoque Dianteiro</label>
+    </li>
+    <li>
+      <label></label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Aerofolio</label>
+    </li>
+    <li>
+      <input type="checkbox" onchange="updateTotal()" data-price="10000">
+      <label>Parachoque Traseiro</label>
+    </li>
+    <li>
+      <label></label>
+    </li>
+    </li>
+    <li>
+    </li>
+  </ul>
+  <div class="total">
+    <h1>Valor Total</h1>
+  <input type="text" id="total" readonly>
+  <button onclick="limparValorTotal()"><h3>Limpar</h3></button>
+  </div>
+  <script>
+    function updateTotal() {
+      let total = 0;
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          total += parseFloat(checkbox.getAttribute('data-price'));
+        }
+      });
+      const formattedTotal = total.toLocaleString('pt-BR', {
+        maximumFractionDigits: 2
+      });
+
+      document.getElementById('total').value = formattedTotal;
+    }
+    function limparValorTotal() {
+      
+      document.getElementById('total').value = '0';
+      location.reload();
+    }
+  </script>
+</body>
+</html>
